@@ -43,7 +43,11 @@ class HP_6060B(object):
 	
 	def setVoltage(self, volt):
 		self.preCommand()
-		self.gpib.write("VOLT {:.3f}".format(volt))
+		if volt >= 0.0 and volt <= 60.0:
+			self.gpib.write("VOLT {:.3f}".format(volt))
+			return True
+		else:
+			return False
 		
 	def getVoltage(self):
 		self.preCommand()
@@ -55,8 +59,12 @@ class HP_6060B(object):
 		
 	def setCurrent(self, amps):
 		self.preCommand()
-		self.gpib.write("CURR {:.3f}".format(amps))
-		
+		if amps >= 0.0 and amps <= 60.0:
+			self.gpib.write("CURR {:.3f}".format(amps))
+			return True
+		else:
+			return False
+	
 	def getCurrent(self):
 		self.preCommand()
 		self.gpib.write("MEAS:CURR?")
@@ -67,7 +75,11 @@ class HP_6060B(object):
 	
 	def setResistance(self, ohm):
 		self.preCommand()
-		self.gpib.write("RES {:.3f}".format(ohm))
+		if ohm >= 0.033 and ohm <= 10000.0:
+			self.gpib.write("RES {:.3f}".format(ohm))
+			return True
+		else:
+			return False
 	
 	def getPower(self):
 		self.preCommand()
