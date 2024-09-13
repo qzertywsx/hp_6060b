@@ -15,6 +15,9 @@ class HP_6060B(object):
 	class CurrentRange(Enum):
 		I6A  = 0
 		I60A = 1
+
+	def __str__(self):
+		return "HP 6060B address: " + str(self.address)
 	
 	def preCommand(self):
 		if self.gpib.address != self.address or self.firstTime:
