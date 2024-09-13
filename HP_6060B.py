@@ -5,7 +5,6 @@ class HP_6060B(object):
 		self.address = addr
 		self.gpib = gpib
 		self.firstTime = True
-		self.gpib.write("++read_tmo_ms 1200")
 		self.preCommand()
 	
 	class Mode(Enum):
