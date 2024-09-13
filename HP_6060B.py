@@ -92,10 +92,6 @@ class HP_6060B(object):
 		except:
 			return False
 	
-	def setVoltageCurrent(self, volt, amps):
-		self.preCommand()
-		self.gpib.write("VOLT {:.3f};CURR {:.3f}".format(volt, amps))
-	
 	def setMode(self, mode):
 		self.preCommand()
 		if mode == self.Mode.CURRENT:
