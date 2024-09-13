@@ -44,9 +44,6 @@ Set the resistance to `ohm`
 ### getPower()
 Return the measured power or `False` in case of problem
 
-### setVoltageCurrent(volt, amps)
-Set the voltage to `volt` and the current to `amps`
-
 ### setMode(mode)
 Set the load mode
 <table>
