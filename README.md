@@ -1,5 +1,5 @@
 # HP_6060B
-Python module for the HP 6060B electronic load.
+Python module for the HP 6060B 60 V 60 A electronic load.
 
 You must use my GPIB or GPIB_WIFI module to use this module.
 
