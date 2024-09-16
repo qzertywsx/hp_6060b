@@ -113,7 +113,10 @@ print("Power:", load.getPower(), "W")
 load.setLoadState(False)
 load.local()
 ```
-## Result of executing the above code (Not done yet):
+## Result of executing the above code:
 ```
-GPIB address: 4, IP: 192.168.178.36
+HP 6060B address: 4
+Voltage: 4.976 V
+Current: 0.309 A
+Power: 1.5376 W
 ```
