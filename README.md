@@ -10,7 +10,7 @@ Return the *IDN? of the instrument
 ### reset()
 Reset the instrument to the default state
 
-### setOutput(on)
+### setLoadState(on)
 Set the output
 <table>
   <tr><td>on</td><td>Description</td></tr>
@@ -18,7 +18,7 @@ Set the output
   <tr><td>False</td><td>Disable the output</td></tr>
 </table>
 
-### getOutput()
+### getLoadState()
 Get the output state
 <table>
   <tr><td>Return</td><td>Description</td></tr>
@@ -106,11 +106,11 @@ gpib = AR488_WIFI('192.168.178.36', timeout=5)
 load = HP_6060B( gpib, 4)
 load.setCurrentRange(HP_6060B.CurrentRange.I6A)
 load.setMode(HP_6060B.Mode.CURRENT)
-load.setOutput(True)
+load.setLoadState(True)
 print("Voltage:", load.getVoltage(), "V")
 print("Current:", load.getCurrent(), "A")
 print("Power:", load.getPower(), "W")
-load.setOutput(False)
+load.setLoadState(False)
 load.local()
 ```
 ## Result of executing the above code (Not done yet):
