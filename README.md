@@ -94,6 +94,9 @@ Get the current range of the load
   <tr><td>HP_6060B.CurrentRange.I60A</td><td>60A range</td></tr>
 </table>
 
+### getError()
+Get the last error
+
 ### local()
 Go to local mode (Reenable the front panel control)
 
