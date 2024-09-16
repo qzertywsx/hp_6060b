@@ -106,7 +106,7 @@ from GPIB_WIFI import AR488_WIFI
 from HP_6060B import HP_6060B
 
 gpib = AR488_WIFI('192.168.178.36', timeout=5)
-load = HP_6060B( gpib, 4)
+load = HP_6060B(gpib, 4)
 load.setCurrentRange(HP_6060B.CurrentRange.I6A)
 load.setMode(HP_6060B.Mode.CURRENT)
 load.setLoadState(True)
