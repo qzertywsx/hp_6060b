@@ -1,16 +1,16 @@
-# HP_6060B
+# hp_6060b
 Python module for the HP 6060B 60 V 60 A electronic load.
 
 You must use my GPIB or GPIB_WIFI module to use this module.
 
 ## Supported command:
-### get_IDN()
+### get_idn()
 Return the *IDN? of the instrument
 
 ### reset()
 Reset the instrument to the default state
 
-### setLoadState(on)
+### set_load_state(on)
 Set the output
 <table>
   <tr><td>on</td><td>Description</td></tr>
@@ -18,7 +18,7 @@ Set the output
   <tr><td>False</td><td>Disable the output</td></tr>
 </table>
 
-### getLoadState()
+### get_load_state()
 Get the output state
 <table>
   <tr><td>Return</td><td>Description</td></tr>
@@ -26,25 +26,25 @@ Get the output state
   <tr><td>False</td><td>The output is disabled</td></tr>
 </table>
 
-### setVoltage(volt)
+### set_voltage(volt)
 Set the voltage to `volt`
 
-### getVoltage()
+### get_voltage()
 Return the measured voltage or `False` in case of problem
 
-### setCurrent(amps)
+### set_current(amps)
 Set the current to `amps`
 
-### getCurrent()
+### get_current()
 Return the measured current or `False` in case of problem
 
-### setResistance(ohm)
+### set_resistance(ohm)
 Set the resistance to `ohm`
 
-### getPower()
+### get_power()
 Return the measured power or `False` in case of problem
 
-### setMode(mode)
+### set_mode(mode)
 Set the load mode
 <table>
   <tr><td>mode</td><td>Description</td></tr>
@@ -53,7 +53,7 @@ Set the load mode
   <tr><td>HP_6060B.Mode.RESISTANCE</td><td>Set the load to constant resistance</td></tr>
 </table>
 
-### getMode()
+### get_mode()
 Get the load mode
 <table>
   <tr><td>Return </td><td>Description</td></tr>
@@ -62,7 +62,7 @@ Get the load mode
   <tr><td>HP_6060B.Mode.RESISTANCE</td><td>Constant resistance mode</td></tr>
 </table>
 
-### setShortMode(on)
+### set_short_mode(on)
 Set the short circuit mode
 <table>
   <tr><td>on</td><td>Description</td></tr>
@@ -70,7 +70,7 @@ Set the short circuit mode
   <tr><td>False</td><td>Normal electronic load mode</td></tr>
 </table>
 
-### getShortMode()
+### get_short_mode()
 Get the short circuit mode
 <table>
   <tr><td>Return</td><td>Description</td></tr>
@@ -78,7 +78,7 @@ Get the short circuit mode
   <tr><td>False</td><td>Normal electronic load mode</td></tr>
 </table>
 
-### setCurrentRange(currRange)
+### set_current_range(curr_range)
 Set the current range of the load
 <table>
   <tr><td>currRange</td><td>Description</td></tr>
@@ -86,7 +86,7 @@ Set the current range of the load
   <tr><td>HP_6060B.CurrentRange.I60A</td><td>60A range</td></tr>
 </table>
 
-### getCurrentRange()
+### get_current_range()
 Get the current range of the load
 <table>
   <tr><td>Return</td><td>Description</td></tr>
@@ -94,7 +94,7 @@ Get the current range of the load
   <tr><td>HP_6060B.CurrentRange.I60A</td><td>60A range</td></tr>
 </table>
 
-### getError()
+### get_error()
 Get the last error
 
 ### local()
@@ -106,14 +106,13 @@ from GPIB_WIFI import AR488_WIFI
 from HP_6060B import HP_6060B
 
 gpib = AR488_WIFI('192.168.178.36', timeout=5)
-load = HP_6060B(gpib, 4)
-load.setCurrentRange(HP_6060B.CurrentRange.I6A)
-load.setMode(HP_6060B.Mode.CURRENT)
-load.setLoadState(True)
-print("Voltage:", load.getVoltage(), "V")
-print("Current:", load.getCurrent(), "A")
-print("Power:", load.getPower(), "W")
-load.setLoadState(False)
+load.set_current_range(HP6060B.CurrentRange.I6A)
+load.set_mode(HP6060B.Mode.CURRENT)
+load.set_load_state(True)
+print("Voltage:", load.get_voltage(), "V")
+print("Current:", load.get_current(), "A")
+print("Power:", load.get_power(), "W")
+load.set_load_state(False)
 load.local()
 ```
 ## Result of executing the above code:
