@@ -102,10 +102,12 @@ Go to local mode (Reenable the front panel control)
 
 ## Usage:
 ```python
-from GPIB_WIFI import AR488_WIFI
-from HP_6060B import HP_6060B
+from gpib_all import AR488Wifi
+from hp_6060b import HP6060B
 
-gpib = AR488_WIFI('192.168.178.36', timeout=5)
+gpib = AR488Wifi('192.168.178.36')
+load = HP6060B(gpib, 4)
+print(load)
 load.set_current_range(HP6060B.CurrentRange.I6A)
 load.set_mode(HP6060B.Mode.CURRENT)
 load.set_load_state(True)
